@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roblox Next Hit</title>
+  <meta name="description" content="One button. Live Roblox market research. One exceptionally strong game idea — free for everyone." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=2" />
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <main id="app">
+    <!-- Landing -->
+    <section id="view-landing" class="view active">
+      <p class="eyebrow">Roblox Next Hit</p>
+      <h1>Find the game Roblox<br /><em>hasn't played yet.</em></h1>
+      <p class="lede">Live front-page data, official Discovery docs and a ruthless gameplay review — distilled into one idea worth building.</p>
+      <button id="go" class="primary" type="button">
+        <span>Find the next big Roblox game</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </button>
+      <p class="fine">Free · no account · each run takes a few minutes of real research</p>
+    </section>
+
+    <!-- Research in progress -->
+    <section id="view-research" class="view" aria-live="polite">
+      <p class="eyebrow">Researching <span id="elapsed">0:00</span></p>
+      <h2 id="research-title">Reading the Roblox market</h2>
+      <ol id="stages" class="stages"></ol>
+      <p class="fine" id="queue-note" hidden></p>
+    </section>
+
+    <!-- Result -->
+    <section id="view-result" class="view">
+      <article id="result" class="result"></article>
+      <p class="fine">“Rethink” runs fresh research and makes the engine improve these top ideas against their critiques.</p>
+      <div class="actions">
+        <button id="rethink" class="primary" type="button"><span>Rethink these ideas</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4" /></svg>
+        </button>
+        <button id="again" class="ghost" type="button">Find a brand-new idea</button>
+        <button id="copy" class="ghost" type="button">Copy idea</button>
+      </div>
+    </section>
+
+    <!-- Error -->
+    <section id="view-error" class="view">
+      <p class="eyebrow">Research stopped</p>
+      <h2>Not this time.</h2>
+      <p class="lede" id="error-msg"></p>
+      <button id="retry" class="primary" type="button"><span>Try again</span></button>
+    </section>
+  </main>
+  <footer class="foot">
+    Uses Roblox's public charts, official Creator Docs and open web search. Ideas are AI-assisted research, not guarantees — Roblox's recommendation system is private.
+  </footer>
+  <script src="/app.js?v=2" type="module"></script>
+</body>
+</html>

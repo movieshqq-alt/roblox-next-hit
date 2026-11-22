@@ -1,0 +1,26 @@
+# One-click deploy on Render's free plan: https://render.com/deploy
+services:
+  - type: web
+    name: roblox-next-hit
+    runtime: node
+    plan: free
+    buildCommand: "echo no build step"
+    startCommand: node server.js
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Recommended: a free Groq key (no credit card) makes runs ~10x faster and allows parallel visitors.
+      - key: GROQ_API_KEY
+        sync: false
+      # Optional extra free-tier fallbacks:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CEREBRAS_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: PER_IP_PER_HOUR
+        value: "4"
+      - key: DAILY_CAP
+        value: "150"

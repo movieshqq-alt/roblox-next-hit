@@ -1,0 +1,13 @@
+{
+  "name": "roblox-next-hit",
+  "version": "1.0.0",
+  "description": "One button. Real Roblox market research. One exceptionally strong game idea.",
+  "type": "module",
+  "main": "server.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "license": "MIT"
+}
