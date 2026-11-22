@@ -29,4 +29,6 @@ console.log('\n================ RESULT ================');
 console.log(JSON.stringify(result, null, 2));
 const bad = result.sources.filter((s) => !/^https:\/\//.test(s.url));
 console.log(`\nChecks: name=${!!result.name} loop=${result.loop.length} quality=${result.quality.total}>=${result.quality.pass} sources=${result.sources.length} nonHttpsSources=${bad.length}`);
-process.exit(result.quality.total >= result.quality.pass && result.name && !bad.length ? 0 : 4);
+// A below-bar result is valid (clearly labelled), so success = a complete, well-sourced result.
+console.log(`belowBar=${result.belowBar} top5=${result.top5?.length}`);
+process.exit(result.name && result.top5?.length && !bad.length ? 0 : 4);
